@@ -18,15 +18,6 @@ class Tutorial < ActiveRecord::Base
   alias_attribute :name, :title
   alias_attribute :owner, :user
 
-  def self.search(search)
-    res = if search
-            where('lower(title) LIKE lower(?)', "%#{search}%")
-          else
-            all
-          end
-    res
-  end
-
   def to_hash(recurse = true)
     h = {
       id: id,
