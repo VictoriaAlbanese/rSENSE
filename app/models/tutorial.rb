@@ -33,16 +33,16 @@ class Tutorial < ActiveRecord::Base
     }
 
     # The featured media object is the instructions pdf
-    unless featured_media_id.nil?
-      h.merge!(mediaSrc: media_objects.find(featured_media_id).tn_src)
-    end
+    #unless featured_media_id.nil?
+    #  h.merge!(mediaSrc: media_objects.find(featured_media_id).tn_src)
+    #end
 
-    if recurse
-      h.merge!(
-        mediaObjects: media_objects.map { |o| o.to_hash false },
-        owner:        owner.to_hash(false)
-      )
-    end
+    #if recurse
+    #  h.merge!(
+    #    mediaObjects: media_objects.map { |o| o.to_hash false },
+    #    owner:        owner.to_hash(false)
+    #  )
+    #end
 
     h
   end
