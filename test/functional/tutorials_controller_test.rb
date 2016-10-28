@@ -31,7 +31,7 @@ class TutorialsControllerTest < ActionController::TestCase
   end
 
   test 'should show tutorial' do
-    nixon = sign_in('user', users(:nixon))
+    sign_in('user', users(:nixon))
     get :show, id: @tutorial
     assert_redirected_to '/tutorials'
     # HTML5 Validation is being skipped until the validator is fixed
