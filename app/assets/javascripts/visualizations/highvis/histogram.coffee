@@ -63,12 +63,12 @@ $ ->
               str  = "<table>"
               xField = @series.xAxis.options.title.text
               idx = data.fields.map((x) -> fieldTitle(x)).indexOf(xField)
-              str += "<tr><td>#{xField}:</td> <td>#{@point.realValue}</td></tr>"
-              str += "<tr><td>Bin:</td><td>#{@x}</td></tr>"
-              str += "<tr><td># Occurrences:</td><td>#{@total}<td></tr>"
+              str += "<tr><td style='text-align: right'>#{xField} :</td> <td style='padding-left: 5px'>#{@point.realValue}</td></tr>"
+              str += "<tr><td style='text-align: right'>Bin Number :</td><td style='padding-left: 5px'>#{@x}</td></tr>"
+              str += "<tr><td style='text-align: right'>Bin Range :</td><td style='padding-left: 5px'>#{@x - document.getElementById("bin-size").value/2} - #{@x + document.getElementById("bin-size").value/2}</td></tr>"
+              str += "<tr><td style='text-align: right'>Data Points in Bin :</td><td style='padding-left: 5px'>#{@total}<td></tr>"
               if @y isnt 0
-                str += "<tr><td><div style='color:#{@series.color};'> #{@series.name}:</div></td>"
-                str += "<td>#{@y}</td></tr>"
+                str += "<tr><td style='text-align: right'>Group ID :</td><td style='padding-left: 5px'><div style='color:#{@series.color};'> #{@series.name}</div></td></tr>"
               str += "</table>"
             useHTML: true
           plotOptions:
